@@ -20,7 +20,7 @@ window.addEventListener('mousemove', (event) => {
     mouse.y = event.y;
 });
 
-window.addEventListener('touchstart', (tevent)=>  {
+document.addEventListener('touchstart', (tevent)=>  {
     tevent.preventDefault();
     let touch = tevent.touches[0];
     mouse.x = touch.clientX;
