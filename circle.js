@@ -20,12 +20,12 @@ window.addEventListener('mousemove', (event) => {
     mouse.y = event.y;
 });
 
-document.addEventListener('touchstart', (tevent)=>  {
+window.addEventListener('touchmove', (tevent)=>  {
     tevent.preventDefault();
-    let touch = tevent.touches[0];
-    mouse.x = touch.clientX;
-    mouse.y = touch.clientY;
-});
+    let touch = tevent.targetTouches[0];
+    mouse.x = touch.pageX;
+    mouse.y = touch.pageY;
+}, {passive : false});
 
 class Circle {
     constructor(x, y, dx, dy, radius) {
