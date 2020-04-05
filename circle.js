@@ -19,6 +19,14 @@ window.addEventListener('mousemove', (event) => {
     mouse.x = event.x;
     mouse.y = event.y;
 });
+
+window.addEventListener('touchmove', (tevent)=>  {
+    tevent.preventDefault();
+    let touch = tevent.touches[0];
+    mouse.x = touch.clientX;
+    mouse.y = touch.clientY;
+});
+
 class Circle {
     constructor(x, y, dx, dy, radius) {
         this.x = x;
